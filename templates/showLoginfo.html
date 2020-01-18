@@ -1,0 +1,28 @@
+{%extends "base.html" %}
+
+{% block mainbody %}
+<p>继承了 base.html 文件</p>
+<td><button>修改</button><button>删除</button></td>
+
+<table class="table table-striped">
+    <caption>表格</caption>
+
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>消息</th>
+            <th>时间</th>
+        </tr>
+    </thead>
+    {% for  l in loginfo %}
+    <tbody>
+        <tr>
+            <td>{{ l.id }}</td>
+            <td>{{ l.Messages }}</td>
+            <td>{{ l.Time }}</td>
+
+        </tr>
+    </tbody>
+    {% endfor %}
+</table>
+{% endblock %}

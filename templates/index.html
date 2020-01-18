@@ -1,1 +1,30 @@
-<h5>{{  messages }}</h5>
+{%extends "base.html" %}
+
+{% block mainbody %}
+<p>继承了 base.html 文件</p>
+<ul>
+    <li>
+        <a href="{% url 'AddUserinfo' %}">添加用户信息</a>
+    </li>
+    <li>
+        <a href="{% url 'AddHostinfo' %}">添加主机信息</a>
+    </li>
+</ul>
+
+
+
+
+<ul>
+    <li>
+        <a href="{% url 'userinfo' %}">用户信息</a>
+    </li>
+    <li>
+        <a href="{% url 'loginfo' %}">日志信息</a>
+    </li>
+    <li>
+        <a href="{% url 'hostinfo' %}">主机信息</a>
+    </li>
+</ul>
+
+
+{% endblock %}

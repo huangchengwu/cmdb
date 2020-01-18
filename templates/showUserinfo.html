@@ -1,0 +1,35 @@
+{%extends "base.html" %}
+
+{% block mainbody %}
+<p>继承了 base.html 文件</p>
+<td> <a href="{% url 'AddUserinfo' %}">添加用户信息</a> <a>修改</a><button>删除</button></td>
+
+<table class="table table-striped">
+    <caption>表格</caption>
+
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>名字</th>
+            <th>用户</th>
+            <th>密码</th>
+            <th>手机</th>
+            <th>邮件</th>
+            <th>时间</th>
+        </tr>
+    </thead>
+    {% for  u in userinfo %}
+    <tbody>
+        <tr>
+            <td>{{ u.id }}</td>
+            <td>{{ u.Name }}</td>
+            <td>{{ u.User }}</td>
+            <td>{{ u.Password }}</td>
+            <td>{{ u.Mobile }}</td>
+            <td>{{ u.Email }}</td>
+            <td>{{ u.Time }}</td>
+        </tr>
+    </tbody>
+    {% endfor %}
+</table>
+{% endblock %}
